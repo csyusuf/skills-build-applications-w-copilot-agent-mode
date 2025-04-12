@@ -1,25 +1,28 @@
-# Test data for octofit_db
+# Test data for OctoFit Tracker
 
 test_users = [
-    {"email": "john.doe@example.com", "name": "John Doe", "age": 25},
-    {"email": "jane.smith@example.com", "name": "Jane Smith", "age": 30},
+    {"username": "student1", "email": "student1@example.com", "password": "password123"},
+    {"username": "student2", "email": "student2@example.com", "password": "password123"},
+    {"username": "student3", "email": "student3@example.com", "password": "password123"}
 ]
 
 test_teams = [
-    {"name": "Team Alpha", "members": ["john.doe@example.com", "jane.smith@example.com"]},
+    {"name": "Team Alpha", "members": ["student1", "student2"]},
+    {"name": "Team Beta", "members": ["student3"]}
 ]
 
 test_activities = [
-    {"user": "john.doe@example.com", "type": "Running", "duration": 30},
-    {"user": "jane.smith@example.com", "type": "Cycling", "duration": 45},
+    {"user": "student1", "activity": "running", "duration": 30},
+    {"user": "student2", "activity": "walking", "duration": 45},
+    {"user": "student3", "activity": "cycling", "duration": 60}
 ]
 
 test_leaderboard = [
-    {"user": "john.doe@example.com", "score": 100},
-    {"user": "jane.smith@example.com", "score": 150},
+    {"team": "Team Alpha", "points": 100},
+    {"team": "Team Beta", "points": 80}
 ]
 
 test_workouts = [
-    {"user": "john.doe@example.com", "workout_type": "Strength Training", "duration": 60},
-    {"user": "jane.smith@example.com", "workout_type": "Yoga", "duration": 45},
+    {"name": "Morning Run", "description": "A quick 5km run to start the day."},
+    {"name": "Evening Yoga", "description": "Relaxing yoga session to wind down."}
 ]
