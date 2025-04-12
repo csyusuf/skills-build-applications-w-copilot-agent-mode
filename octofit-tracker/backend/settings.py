@@ -9,8 +9,16 @@ DATABASES = {
 }
 
 # Enable CORS
+INSTALLED_APPS = [
+    # Default installed apps
+]
+
 INSTALLED_APPS += [
     'corsheaders',
+]
+
+MIDDLEWARE = [
+    # Default middleware entries
 ]
 
 MIDDLEWARE.insert(0, 'corsheaders.middleware.CorsMiddleware')
