@@ -20,6 +20,6 @@ test_leaderboard = [
 ]
 
 test_workouts = [
-    {"name": "Push-ups", "description": "Do 20 push-ups"},
-    {"name": "Sit-ups", "description": "Do 30 sit-ups"},
+    {"user": "john.doe@example.com", "workout_type": "Strength Training", "duration": 60},
+    {"user": "jane.smith@example.com", "workout_type": "Yoga", "duration": 45},
 ]

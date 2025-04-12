@@ -21,10 +21,7 @@ class Command(BaseCommand):
             self.stdout.write('Populating teams...')
             for team_data in test_teams:
                 self.stdout.write(f'Adding team: {team_data}')
-                members = team_data.pop('members')
-                team, _ = Team.objects.get_or_create(**team_data)
-                team.members = [{'email': email} for email in members]
-                team.save()
+                Team.objects.get_or_create(**team_data)
         except Exception as e:
             self.stderr.write(f'Error populating teams: {e}')
             self.stderr.write(traceback.format_exc())
@@ -33,9 +30,7 @@ class Command(BaseCommand):
             self.stdout.write('Populating activities...')
             for activity_data in test_activities:
                 self.stdout.write(f'Adding activity: {activity_data}')
-                user_email = activity_data.pop('user')
-                user = User.objects.get(email=user_email)
-                Activity.objects.get_or_create(user=user, **activity_data)
+                Activity.objects.get_or_create(**activity_data)
         except Exception as e:
             self.stderr.write(f'Error populating activities: {e}')
             self.stderr.write(traceback.format_exc())
@@ -44,9 +39,7 @@ class Command(BaseCommand):
             self.stdout.write('Populating leaderboard...')
             for leaderboard_data in test_leaderboard:
                 self.stdout.write(f'Adding leaderboard entry: {leaderboard_data}')
-                user_email = leaderboard_data.pop('user')
-                user = User.objects.get(email=user_email)
-                Leaderboard.objects.get_or_create(user=user, **leaderboard_data)
+                Leaderboard.objects.get_or_create(**leaderboard_data)
         except Exception as e:
             self.stderr.write(f'Error populating leaderboard: {e}')
             self.stderr.write(traceback.format_exc())
